@@ -34,11 +34,8 @@ public class NewRelicCordovaPlugin extends CordovaPlugin {
 
         String appToken = preferences.getString("ANDROID_APP_TOKEN", null);
 
-        if (appToken == null || appToken.isEmpty() || "x".equals(appToken)) {
-            Log.e(TAG, "Failed to load application token! The Android agent is not configured for Cordova.");
 
-        } else {
-            NewRelic.withApplicationToken(appToken)
+            NewRelic.withApplicationToken("AA9ef94a5a7ab16eb7af7a37f9430b350d29868ec6")
                     .start(this.cordova.getActivity().getApplication());
 
             final String pluginVersion = preferences.getString("PLUGIN_VERSION", "undefined");
@@ -48,7 +45,6 @@ public class NewRelicCordovaPlugin extends CordovaPlugin {
             devInfo.setApplicationPlatformVersion(pluginVersion);
 
             NewRelic.setAttribute(AnalyticAttribute.APPLICATION_PLATFORM_VERSION_ATTRIBUTE, pluginVersion);            
-        }
 
     }
 
