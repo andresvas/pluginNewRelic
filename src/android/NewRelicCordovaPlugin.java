@@ -35,7 +35,7 @@ public class NewRelicCordovaPlugin extends CordovaPlugin {
         String appToken = preferences.getString("ANDROID_APP_TOKEN", null);
 
 
-            NewRelic.withApplicationToken("AA9ef94a5a7ab16eb7af7a37f9430b350d29868ec6")
+            NewRelic.withApplicationToken("AA29216cec78c28824a4e54cf5dc4da2380aed59c7-NRMA")
                     .start(this.cordova.getActivity().getApplication());
 
             final String pluginVersion = preferences.getString("PLUGIN_VERSION", "undefined");
